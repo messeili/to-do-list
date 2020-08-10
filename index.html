@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>
+            My TO DO List
+        </h1>
+    </header>
+    <main>
+        <section id="formContainer">
+            <form id="myForm">
+                <div>
+                    <label for="taskDesc">Task</label>
+                    <input type="text" id="taskDesc" placeholder="Enter task desctiption" required>
+                </div>
+                <div>
+                    <label for="taskDate">Date:</label>
+                    <input type="date" id="taskDate" placeholder="Enter task date" required>
+                </div>
+                <div>
+                    <label for="taskUrgency">Urgency</label>
+                    <select id="taskUrgency">
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                </div>
+                <div>
+                    <input type="submit" value="Submit" id="submit">
+                </div>
+            </form>
+
+        </section>
+        <section id="tableContainer">
+            <table id="myTable"></table>
+            <button onclick="clearAllTasks()">Clear Data</button>
+
+        </section>
+
+
+    </main>
+    <footer>
+
+    </footer>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
