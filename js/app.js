@@ -4,7 +4,9 @@ Task.all = [];
 //if statement to prevnt losing localstorage date
 if (!localStorage.getItem('tasks')) {
     localStorage.setItem('tasks', Task.all)
+    generateHeader();
 } else {
+    generateHeader();
     Task.all = JSON.parse(localStorage.getItem('tasks'))
     render();
 }
@@ -23,9 +25,9 @@ table.addEventListener('click', removeTask);
 //this function validate my form date and creates a new object from the constructor
 function clickHandler() {
     event.preventDefault();
-    var taskDesc = event.target.taskDesc.value;
-    var taskDate = event.target.taskDate.value;
-    var taskUrgency = event.target.taskUrgency.value;
+    taskDesc = event.target.taskDesc.value;
+    taskDate = event.target.taskDate.value;
+    taskUrgency = event.target.taskUrgency.value;
     new Task(taskDesc, taskDate, taskUrgency);
     localStorage.setItem('tasks', JSON.stringify(Task.all));
 
@@ -57,7 +59,6 @@ function render() {
         </tr>
         `
         total += code;
-        console.log(total);
     }
     table.innerHTML += total;
 
